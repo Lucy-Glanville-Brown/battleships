@@ -30,7 +30,7 @@ def print_board(board):
 def create_ships(board):
     """
     Creates a random integer between 0 and 7 for ship_row and ship_column
-    Checks if "X" is already on the board, if so runs randomint until
+    Checks if "@" is already on the board, if so runs randomint until
     there is an available space
     When there is an available space update with "@"
     """
@@ -39,6 +39,30 @@ def create_ships(board):
         while board[ship_row][ship_column] == "@":
             ship_row, ship_column = randint(0,7), randint(0,7)
         board[ship_row][ship_column] = "@"
+
+def computer_guess(board):
+    """
+    Creates a random integer between 0 and 7 for computer_ship_row and
+    computer_ship_column
+    Checks if "@" is already on the board, if so runs randomint until
+    there is an available space
+    When there is an available space update with "@"
+    """
+    for ship in range(5):
+        computer_ship_row, computer_ship_column = randint(0,7), randint(0,7)
+        if USER_BOARD[row][column] == "-" or USER_BOARD[row][column] == "X":
+            computer_ship_row, computer_ship_column = randint(0,7), randint(0,7) 
+        elif USER_BOARD[row][column] == "@":
+            print(f"{username}, your battleship has been hit!")
+            print(f"The computer guessed row {computer_ship_row} and column {computer_ship_column}")
+            USER_BOARD[row][column] = "X"
+        else:
+            print(f"Phew {username}, the computer missed!")
+            print(f"The computer guessed row {computer_ship_row} and column {computer_ship_column}")
+            USER_BOARD[row][column] = "-"
+        if count_hit_ships(USER_BOARD) == 5:
+            print(f"Sorry {username}, the computer has sunk all of your battleships")
+            break
 
 def get_ship_location():
     """
