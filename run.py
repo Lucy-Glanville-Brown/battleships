@@ -1,13 +1,16 @@
 from random import randint
 
 # Legend
-# "X" for placing ship and hit battleship
+# "@" for placing ship
 # " " for available space
+# "X" for hit battleship
 # "-" for missed shot
 
 HIDDEN_BOARD = [[" "] * 8 for x in range(8)]
 # creates a list of 8 spaces, 8 times
 GUESS_BOARD = [[" "] * 8 for x in range(8)]
+# creates a list of 8 spaces, 8 times
+USER_BOARD = [[" "] * 8 for x in range(8)]
 # creates a list of 8 spaces, 8 times
 
 letters_to_numbers = {"A": 0, "B": 1, "C": 2, "D": 3, "E": 4, "F": 5, "G": 6, "H": 7}
@@ -29,13 +32,13 @@ def create_ships(board):
     Creates a random integer between 0 and 7 for ship_row and ship_column
     Checks if "X" is already on the board, if so runs randomint until
     there is an available space
-    When there is an available space update with "X"
+    When there is an available space update with "@"
     """
     for ship in range(5):
         ship_row, ship_column = randint(0,7), randint(0,7)
-        while board[ship_row][ship_column] == "X":
+        while board[ship_row][ship_column] == "@":
             ship_row, ship_column = randint(0,7), randint(0,7)
-        board[ship_row][ship_column] = "X"
+        board[ship_row][ship_column] = "@"
 
 def get_ship_location():
     """
@@ -67,19 +70,29 @@ def count_hit_ships(board):
                 count += 1
     return count
 
-create_ships(HIDDEN_BOARD)
-print("print board hidden board")
-print_board(HIDDEN_BOARD)
+def run_game():
+  create_ships(HIDDEN_BOARD)
+  print("Hidden Board")
+  print_board(HIDDEN_BOARD)
+  create_ships(USER_BOARD)
+  print("Welcome to Battleships")
+  print("You have 10 turns to find all of the battleships")
+  global username
+  username = input("Please enter your name:\n")
+
+run_game()
 
 turns = 10
 
 while turns > 0:
-    print("Welcome to Battleships")
+    print(f"{username}'s Board")
+    print_board(USER_BOARD)
+    print("Computer's Board")
     print_board(GUESS_BOARD)
     row, column = get_ship_location()
     if GUESS_BOARD[row][column] == "-" or GUESS_BOARD[row][column] == "X":
         print("You have already guessed that")
-    elif HIDDEN_BOARD[row][column] == "X":
+    elif HIDDEN_BOARD[row][column] == "@":
         print("Congratulations, you have hit the battleship")
         GUESS_BOARD[row][column] = "X"
         turns -= 1
