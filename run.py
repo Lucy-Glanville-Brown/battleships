@@ -23,7 +23,23 @@ def print_board(board):
         print(row_number, "|".join(row))
         row_number += 1
 
+def create_ships(board):
+    """
+    Creates a random integer between 0 and 7 for ship_row and ship_column
+    Checks if "X" is already on the board, if so runs randomint until there is an available space
+    When there is an available space update with "X"
+    """
+    for ship in range(5):
+        ship_row, ship_column = randint(0,7), randint(0,7)
+        while board[ship_row][ship_column] == "X":
+            ship_row, ship_column = randint(0,7), randint(0,7)
+        board[ship_row][ship_column] = "X"
+
+
+create_ships(HIDDEN_BOARD)
 print("print board hidden board")
 print_board(HIDDEN_BOARD)
+create_ships(GUESS_BOARD)
 print("print board guess board")
 print_board(GUESS_BOARD)
+
