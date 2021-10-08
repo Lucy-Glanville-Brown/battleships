@@ -58,6 +58,17 @@ def get_ship_location():
         column = input("Please enter a ship column A-H\n").upper()
     return int(row) - 1, letters_to_numbers[column]
 
+def count_hit_ships(board):
+    """
+    Counts how many ships you have hit
+    """
+    count = 0
+    for row in board:
+        for column in row:
+            if column == "X":
+                count += 1
+    return count
+
 
 
 create_ships(HIDDEN_BOARD)
@@ -67,3 +78,4 @@ create_ships(GUESS_BOARD)
 print("print board guess board")
 print_board(GUESS_BOARD)
 get_ship_location()
+
