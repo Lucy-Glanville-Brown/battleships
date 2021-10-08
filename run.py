@@ -16,6 +16,9 @@ USER_BOARD = [[" "] * 8 for x in range(8)]
 letters_to_numbers = {"A": 0, "B": 1, "C": 2, "D": 3, "E": 4, "F": 5, "G": 6, "H": 7}
 # converts letters to numbers
 
+numbers_to_letters = {0: "A", 1: "B", 2: "C", 3: "D", 4: "E", 5: "F", 6: "G", 7: "H",}
+# converts numbers to letters
+
 def print_board(board):
     """
     Creates a board with letters for the columns and numbers for the rows
@@ -54,11 +57,11 @@ def computer_guess(board):
             computer_ship_row, computer_ship_column = randint(0,7), randint(0,7) 
         elif USER_BOARD[row][column] == "@":
             print(f"{username}, your battleship has been hit!")
-            print(f"The computer guessed row {computer_ship_row} and column {computer_ship_column}")
+            print(f"The computer guessed row {computer_ship_row} and column {numbers_to_letters[computer_ship_column]}")
             USER_BOARD[row][column] = "X"
         else:
             print(f"Phew {username}, the computer missed!")
-            print(f"The computer guessed row {computer_ship_row} and column {computer_ship_column}")
+            print(f"The computer guessed row {computer_ship_row} and column {numbers_to_letters[computer_ship_column]}")
             USER_BOARD[row][column] = "-"
         if count_hit_ships(USER_BOARD) == 5:
             print(f"Sorry {username}, the computer has sunk all of your battleships")
