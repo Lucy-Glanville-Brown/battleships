@@ -13,11 +13,14 @@ GUESS_BOARD = [[" "] * 8 for x in range(8)]
 USER_BOARD = [[" "] * 8 for x in range(8)]
 # creates a list of 8 spaces, 8 times
 
-letters_to_numbers = {"A": 0, "B": 1, "C": 2, "D": 3, "E": 4, "F": 5, "G": 6, "H": 7}
+letters_to_numbers = {"A": 0, "B": 1, "C": 2, "D": 3, "E": 4,
+                      "F": 5, "G": 6, "H": 7}
 # converts letters to numbers
 
-numbers_to_letters = {0: "A", 1: "B", 2: "C", 3: "D", 4: "E", 5: "F", 6: "G", 7: "H",}
+numbers_to_letters = {0: "A", 1: "B", 2: "C", 3: "D", 4: "E",
+                      5: "F", 6: "G", 7: "H"}
 # converts numbers to letters
+
 
 def print_board(board):
     """
@@ -30,6 +33,7 @@ def print_board(board):
         print(row_number, "|".join(row))
         row_number += 1
 
+
 def create_ships(board):
     """
     Creates a random integer between 0 and 7 for ship_row and ship_column
@@ -38,10 +42,11 @@ def create_ships(board):
     When there is an available space update with "@"
     """
     for ship in range(5):
-        ship_row, ship_column = randint(0,7), randint(0,7)
+        ship_row, ship_column = randint(0, 7), randint(0, 7)
         while board[ship_row][ship_column] == "@":
-            ship_row, ship_column = randint(0,7), randint(0,7)
+            ship_row, ship_column = randint(0, 7), randint(0, 7)
         board[ship_row][ship_column] = "@"
+
 
 def computer_guess(board):
     """
@@ -52,20 +57,28 @@ def computer_guess(board):
     When there is an available space update with "@"
     """
     for ship in range(5):
-        computer_ship_row, computer_ship_column = randint(0,7), randint(0,7)
+        computer_ship_row, computer_ship_column = randint(0, 7), randint(0, 7)
         if USER_BOARD[row][column] == "-" or USER_BOARD[row][column] == "X":
-            computer_ship_row, computer_ship_column = randint(0,7), randint(0,7) 
+            computer_ship_row = randint(0, 7)
+            computer_ship_column = randint(0, 7)
         elif USER_BOARD[row][column] == "@":
             print(f"{username}, your battleship has been hit!")
-            print(f"The computer guessed row {computer_ship_row} and column {numbers_to_letters[computer_ship_column]}")
+            print(
+                f"The computer guessed row {computer_ship_row}"
+                f" and column {numbers_to_letters[computer_ship_column]}")
             USER_BOARD[row][column] = "X"
         else:
             print(f"Phew {username}, the computer missed!")
-            print(f"The computer guessed row {computer_ship_row} and column {numbers_to_letters[computer_ship_column]}")
+            print(
+                f"The computer guessed row {computer_ship_row}"
+                f" and column {numbers_to_letters[computer_ship_column]}")
             USER_BOARD[row][column] = "-"
         if count_hit_ships(USER_BOARD) == 5:
-            print(f"Sorry {username}, the computer has sunk all of your battleships")
+            print(
+                f"Sorry {username}, the computer"
+                " has sunk all of your battleships")
             break
+
 
 def get_ship_location():
     """
@@ -76,15 +89,15 @@ def get_ship_location():
     for column index number
     """
     row = input("Please enter a ship row 1-8\n")
+    column = input("Please enter a ship column A-H\n").upper()
     while row not in "12345678":
         print("Please enter a valid row")
         row = input("Please enter a ship row 1-8\n")
-    
-    column = input("Please enter a ship column A-H\n").upper()
     while column not in "ABCDEFGH":
         print("Please enter a valid column")
         column = input("Please enter a ship column A-H\n").upper()
     return int(row) - 1, letters_to_numbers[column]
+
 
 def count_hit_ships(board):
     """
@@ -97,15 +110,17 @@ def count_hit_ships(board):
                 count += 1
     return count
 
+
 def run_game():
-  create_ships(HIDDEN_BOARD)
-  print("Hidden Board")
-  print_board(HIDDEN_BOARD)
-  create_ships(USER_BOARD)
-  print("Welcome to Battleships")
-  print("You have 10 turns to find all of the battleships")
-  global username
-  username = input("Please enter your name:\n")
+    create_ships(HIDDEN_BOARD)
+    print("Hidden Board")
+    print_board(HIDDEN_BOARD)
+    create_ships(USER_BOARD)
+    print("Welcome to Battleships")
+    print("You have 10 turns to find all of the battleships")
+    global username
+    username = input("Please enter your name:\n")
+
 
 run_game()
 
@@ -130,7 +145,9 @@ while turns > 0:
         turns -= 1
         computer_guess(USER_BOARD)
     if count_hit_ships(GUESS_BOARD) == 5:
-        print(f"Congratulations {username}, you have sunk all of the battleships")
+        print(
+            f"Congratulations {username}, "
+            "you have sunk all of the battleships")
         print("The game is now over")
         break
     print("You have " + str(turns) + " turns remaining")
