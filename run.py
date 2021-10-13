@@ -114,6 +114,7 @@ def count_hit_ships(board):
 def run_game():
     create_ships(HIDDEN_BOARD)
     print("Hidden Board")
+    # print hidden board for testing, needs removing before submission
     print_board(HIDDEN_BOARD)
     create_ships(USER_BOARD)
     print("Welcome to Battleships")
