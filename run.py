@@ -95,6 +95,7 @@ def get_ship_location():
         row = input("Please enter a ship row 1-8\n")
     column = input("Please enter a ship column A-H\n").upper()
     while column not in "ABCDEFGH":
+        validate_column(column)
         print("Please enter a valid column")
         column = input("Please enter a ship column A-H\n").upper()
     return int(row) - 1, letters_to_numbers[column]
@@ -114,6 +115,22 @@ def validate_row(values):
         return False
 
     return True
+
+
+def validate_column(values):
+    """
+    """
+    try:
+        if values not in letters_to_numbers:
+            raise ValueError(
+                f"Letter between A-H required, you provided {values}"
+                )
+    except ValueError as e:
+        print(f"Invalid data: {e}, please try again.\n")
+        return False
+
+    return True
+
 
 
 def count_hit_ships(board):
