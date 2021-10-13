@@ -89,14 +89,31 @@ def get_ship_location():
     for column index number
     """
     row = input("Please enter a ship row 1-8\n")
-    column = input("Please enter a ship column A-H\n").upper()
     while row not in "12345678":
+        validate_row(row)
         print("Please enter a valid row")
         row = input("Please enter a ship row 1-8\n")
+    column = input("Please enter a ship column A-H\n").upper()
     while column not in "ABCDEFGH":
         print("Please enter a valid column")
         column = input("Please enter a ship column A-H\n").upper()
     return int(row) - 1, letters_to_numbers[column]
+
+
+def validate_row(values):
+    """
+    """
+    try:
+        [int(value) for value in values]
+        if int(values) < 1 or int(values) > 8:
+            raise ValueError(
+                f"Number between 1-8 required, you provided {values}"
+            )
+    except ValueError as e:
+        print(f"Invalid data: {e}, please try again.\n")
+        return False
+
+    return True
 
 
 def count_hit_ships(board):
@@ -111,7 +128,7 @@ def count_hit_ships(board):
     return count
 
 
-def run_game():
+def main():
     create_ships(HIDDEN_BOARD)
     print("Hidden Board")
     # print hidden board for testing, needs removing before submission
@@ -123,7 +140,7 @@ def run_game():
     username = input("Please enter your name:\n")
 
 
-run_game()
+main()
 
 turns = 10
 
