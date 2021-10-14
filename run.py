@@ -21,6 +21,9 @@ numbers_to_letters = {0: "A", 1: "B", 2: "C", 3: "D", 4: "E",
                       5: "F", 6: "G", 7: "H"}
 # converts numbers to letters
 
+user_score = 0
+computer_score = 0
+
 
 def print_board(board):
     """
@@ -67,6 +70,7 @@ def computer_guess(board):
                 f"The computer guessed row {computer_ship_row}"
                 f" and column {numbers_to_letters[computer_ship_column]}")
             USER_BOARD[row][column] = "X"
+            computer_score += 1
         else:
             print(f"Phew {username}, the computer missed!")
             print(
@@ -162,6 +166,7 @@ main()
 turns = 10
 
 while turns > 0:
+    print(f"{username}'s Score: {user_score} Computer Score: {computer_score}")
     print(f"{username}'s Board")
     print_board(USER_BOARD)
     print("Computer's Board")
@@ -174,6 +179,7 @@ while turns > 0:
         GUESS_BOARD[row][column] = "X"
         turns -= 1
         computer_guess(USER_BOARD)
+        user_score += 1
     else:
         print(f"Sorry {username}, you missed")
         GUESS_BOARD[row][column] = "-"
