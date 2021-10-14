@@ -1,31 +1,31 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Battleships Game
+## Portfolio Project 3 - Code Institute
+Battleships is a game which I think most people would have played at some point in their lives. This Battleships game is a Python terminal game, which runs in the Code Institute mock terminal on Heroku.
+The users have 10 turns to find all of the computer’s battleships before the computer finds theirs. Each battleship occupies one space on the board.
 
-Welcome Lucy-Glanville-Brown,
+### How to play
+In this version the player enters their name and two boards are randomly generated. The first board displayed is the user’s board which shows the locations of the ships which the computer needs to find. The second board is the computer’s board which is where the user’s guesses will be updated, this will not show the ship locations until the user has hit one of the ships. If a guess misses the battleship “-“ will be display, when a battleship has been hit “X” will be displayed. The player and the computer then take turns to make guesses to try and sink each others battleships. The winner is the player who can sink all of the battlehips first before they run out of turns.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+## Features
+### Existing Features
+* Random board generation for user board which places ships on the board
+* Random board generation for hidden board which places ships on a board which the user cannot see
+* Play against the computer
+* Accepts user input for Name, Row and Column
+* Maintains scores
+* Input validation and error-checking
+    * The user cannot enter coordinates outside of the grid
+    * The user cannot enter the same coordinates twice
+    * The user must enter a number between 1-8 for rows
+    * The user must enter a letter between A-H for columns
+* Randomly creates the computer guesses
 
-## Reminders
+### Future Features
+* Allow the user to select the board size
+* Allow the user to select the number of ships
+* Allow the user to position the ships themselves
+* Have ships larger than 1x1
+* Different game modes
+    * Not limited to 10 turns
+    * Option to select how many turns you would like
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
-
-## Creating the Heroku app
-
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
-
-1. `heroku/python`
-2. `heroku/nodejs`
-
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!
