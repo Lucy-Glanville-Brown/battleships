@@ -29,3 +29,14 @@ In this version the player enters their name and two boards are randomly generat
     * Not limited to 10 turns
     * Option to select how many turns you would like
 
+## Testing
+I have manually tested this project by doing the following:
+* Run the code through the PEP8 validator and confirmed there are no problems
+* Tested in the terminal on Gitpod and the Code Institute Heroku Terminal
+
+### Bugs
+
+### Validator Testing
+PEP8
+
+
