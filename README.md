@@ -6,6 +6,30 @@ The users have 10 turns to find all of the computer’s battleships before the c
 ### How to play
 In this version the player enters their name and two boards are randomly generated. The first board displayed is the user’s board which shows the locations of the ships which the computer needs to find. The second board is the computer’s board which is where the user’s guesses will be updated, this will not show the ship locations until the user has hit one of the ships. If a guess misses the battleship “-“ will be display, when a battleship has been hit “X” will be displayed. The player and the computer then take turns to make guesses to try and sink each others battleships. The winner is the player who can sink all of the battlehips first before they run out of turns.
 
+## User Stories
+Create a Python terminal based game where the users challenges the computer.
+* Display game name
+* Display game info
+* User inputs name
+* User board displayed with ship locations for the computer to guess
+* Computer board displayed for the user to guess the computers ship locations
+* User inputs guess for row
+* User input validated for correct input
+* User inputs guess for column
+* User input validated for correct input
+* User’s input coordinates are checked against the hidden board
+* Message to user to display if their guess was a hit or a miss
+* Computers guesses are randomly generated
+* Computers guesses are checked against the user board
+* Message to user to display if the computer guess was a hit or miss
+* Users board updated with hit or miss and re-printed
+* Computers board updated with hit or miss and re-printed
+* User and computer scores calculated and printed to terminal
+* Turns remaining calculated and printed to the terminal
+* If user has hit 5 ships display message for winning game and end game
+* If computer has hit 5 ships display message for losing game and end game
+* If user has run out of turns display message and end game
+
 ## Features
 ### Existing Features
 * Random board generation for user board which places ships on the board
