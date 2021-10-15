@@ -159,40 +159,48 @@ def main():
 
 main()
 
-turns = 10
+def run_game():
+    """
+    Runs the game with 10 turns
+    When turns = 0 game is over
+    """
+    turns = 10
+    global user_score
 
-while turns > 0:
-    print(f"{username}'s Board")
-    print_board(USER_BOARD)
-    print("Computer's Board")
-    print_board(GUESS_BOARD)
-    row, column = get_ship_location()
-    if GUESS_BOARD[row][column] == "-" or GUESS_BOARD[row][column] == "X":
-        print("You have already guessed that")
-    elif HIDDEN_BOARD[row][column] == "@":
-        print(f"Congratulations {username}, you have hit the battleship")
-        GUESS_BOARD[row][column] = "X"
-        turns -= 1
-        computer_guess(USER_BOARD)
-        user_score += 1
-    else:
-        print(f"Sorry {username}, you missed")
-        GUESS_BOARD[row][column] = "-"
-        turns -= 1
-        computer_guess(USER_BOARD)
-    if count_hit_ships(GUESS_BOARD) == 5:
-        print(
-            f"Congratulations {username}, "
-            "you have sunk all of the battleships")
-        print("The game is now over")
-        break
-    print("You have " + str(turns) + " turns remaining")
-    print(f"{username}'s Score: {user_score} Computer Score: {computer_score}")
-    if turns == 0:
-        print(f"Sorry {username}, you ran out of turns, the game is over")
-        break
-    if count_hit_ships(USER_BOARD) == 5:
-        print(
-            f"Sorry {username}, the computer"
-            " has sunk all of your battleships")
-        break
+    while turns > 0:
+        print(f"{username}'s Board")
+        print_board(USER_BOARD)
+        print("Computer's Board")
+        print_board(GUESS_BOARD)
+        row, column = get_ship_location()
+        if GUESS_BOARD[row][column] == "-" or GUESS_BOARD[row][column] == "X":
+            print("You have already guessed that")
+        elif HIDDEN_BOARD[row][column] == "@":
+            print(f"Congratulations {username}, you have hit the battleship")
+            GUESS_BOARD[row][column] = "X"
+            turns -= 1
+            computer_guess(USER_BOARD)
+            user_score += 1
+        else:
+            print(f"Sorry {username}, you missed")
+            GUESS_BOARD[row][column] = "-"
+            turns -= 1
+            computer_guess(USER_BOARD)
+        if count_hit_ships(GUESS_BOARD) == 5:
+            print(
+                f"Congratulations {username}, "
+                "you have sunk all of the battleships")
+            print("The game is now over")
+            break
+        print("You have " + str(turns) + " turns remaining")
+        print(f"{username}'s Score: {user_score} Computer Score: {computer_score}")
+        if turns == 0:
+            print(f"Sorry {username}, you ran out of turns, the game is over")
+            break
+        if count_hit_ships(USER_BOARD) == 5:
+            print(
+                f"Sorry {username}, the computer"
+                " has sunk all of your battleships")
+            break
+
+run_game()
