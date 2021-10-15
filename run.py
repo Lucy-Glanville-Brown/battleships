@@ -59,6 +59,7 @@ def computer_guess(board):
     there is an available space
     When there is an available space update with "@"
     """
+    global computer_score
     for ship in range(5):
         computer_ship_row, computer_ship_column = randint(0, 7), randint(0, 7)
         if USER_BOARD[row][column] == "-" or USER_BOARD[row][column] == "X":
