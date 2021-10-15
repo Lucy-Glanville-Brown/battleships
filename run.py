@@ -166,7 +166,6 @@ main()
 turns = 10
 
 while turns > 0:
-    print(f"{username}'s Score: {user_score} Computer Score: {computer_score}")
     print(f"{username}'s Board")
     print_board(USER_BOARD)
     print("Computer's Board")
@@ -192,6 +191,7 @@ while turns > 0:
         print("The game is now over")
         break
     print("You have " + str(turns) + " turns remaining")
+    print(f"{username}'s Score: {user_score} Computer Score: {computer_score}")
     if turns == 0:
         print(f"Sorry {username}, you ran out of turns, the game is over")
         break

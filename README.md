@@ -44,6 +44,30 @@ Create a Python terminal based game where the users challenges the computer.
     * The user must enter a letter between A-H for columns
 * Randomly creates the computer guesses
 
+
+In this game of Battleships, the player and computer each have up to 10 turns to find the opponents 5 battleships, and the winner if whoever finds all 5 first.
+
+There are three boards, the Player's Board and the Computer's Board which are both displayed, and a hidden board which holds the position of the computer's battleships which the player needs to find.
+
+Each  board has 8 rows and 8 columns, the rows are 1 to 8, and the columns are A to H, and each cell contains a spaces.
+
+
+Each battleship occupies one cell, and before the game starts, the computer generates the position of 5 battleships that the player and computer need to find to win, and populates the player and hidden boards with them by replacing the space with a "@". The computer board is left blank so that the player cannot see the computers choices.
+
+The Player enters a ship row and column, and the computer generates a ship row and column. 
+
+If the player row and column does not find a battleship on the computers hidden board, the message "Sorry you missed" is displayed and the cell of the displayed computer board is populated with a -.
+
+If the player row and column does find a battleship on the computers hidden board, the message "congratulations you have hit the battleship" is displayed and the cell of the displayed computer board is populated with an X.
+
+The computers generated row and column are displayed.
+
+If the computer row and column does not find a battleship on the players board, the message "Phew the computer missed" is displayed and the cell of the players board is replaced with an -.
+
+If the computer row and column does find a battleship on the players board, the message "your battleship has been hit" is displayed and the @ in the cell is replaced with an X.
+
+After each turn, the number of turns remaining is displayed and control returns for the player to enter their next row and column if the turns are under 10.
+
 ### Future Features
 * Allow the user to select the board size
 * Allow the user to select the number of ships
