@@ -60,30 +60,25 @@ def computer_guess(board):
     When there is an available space update with "@"
     """
     global computer_score
-    for ship in range(5):
-        computer_ship_row, computer_ship_column = randint(0, 7), randint(0, 7)
-        if USER_BOARD[row][column] == "-" or USER_BOARD[row][column] == "X":
-            computer_ship_row = randint(0, 7)
-            computer_ship_column = randint(0, 7)
-        elif USER_BOARD[row][column] == "@":
-            print(f"{username}, your battleship has been hit!")
-            print(
-                f"The computer guessed row {computer_ship_row}"
-                f" and column {numbers_to_letters[computer_ship_column]}")
-            USER_BOARD[row][column] = "X"
-            computer_score += 1
-        else:
-            print(f"Phew {username}, the computer missed!")
-            print(
-                f"The computer guessed row {computer_ship_row}"
-                f" and column {numbers_to_letters[computer_ship_column]}")
-            USER_BOARD[row][column] = "-"
-        if count_hit_ships(USER_BOARD) == 5:
-            print(
-                f"Sorry {username}, the computer"
-                " has sunk all of your battleships")
-            break
-
+    
+    computer_row, computer_column = randint(0, 7), randint(0, 7)
+    if USER_BOARD[computer_row][computer_column] == "-" or USER_BOARD[computer_row][computer_column] == "X":
+        computer_row = randint(0, 7)
+        computer_column = randint(0, 7)
+    elif USER_BOARD[computer_row][computer_column] == "@":
+        print(f"{username}, your battleship has been hit!")
+        print(
+            f"The computer guessed row {computer_row +1}"
+            f" and column {numbers_to_letters[computer_column]}")
+        USER_BOARD[computer_row][computer_column] = "X"
+        computer_score += 1
+    else:
+        print(f"Phew {username}, the computer missed!")
+        print(
+            f"The computer guessed row {computer_row +1}"
+            f" and column {numbers_to_letters[computer_column]}")
+        USER_BOARD[computer_row][computer_column] = "-"
+            
 
 def get_ship_location():
     """
@@ -195,4 +190,9 @@ while turns > 0:
     print(f"{username}'s Score: {user_score} Computer Score: {computer_score}")
     if turns == 0:
         print(f"Sorry {username}, you ran out of turns, the game is over")
+        break
+    if count_hit_ships(USER_BOARD) == 5:
+        print(
+            f"Sorry {username}, the computer"
+            " has sunk all of your battleships")
         break
