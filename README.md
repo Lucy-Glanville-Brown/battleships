@@ -83,8 +83,25 @@ I have manually tested this project by doing the following:
 * Tested in the terminal on Gitpod and the Code Institute Heroku Terminal
 
 ### Bugs
+The computer guesses were not being updated on the user's board but I had noticed that I was not calling the correct variable names. This has now been corrected and the boards are being updated as expected.
 
 ### Validator Testing
 PEP8
+
+## Deployment
+This project was deployed using Code Institute's mock terminal for Heroku.
+* Fork or Clone this repository
+* Create new Heroku app
+* You will need to add PORT 8000 to Config Vars in the Settings tab
+* Set the buildbacks to Python and NodeJS in that order
+* In the Deployment tab select GitHub as the Deployment method
+* Link the Heroku app to the repository
+* Click on Deploy
+
+## Credits
+* Code Institute for the deployment terminal
+* Knowledge Mavens for the YouTube video How to Code Battleship in Python - Single Player Game. https://www.youtube.com/watch?v=tF1WRCrd_HQ
+
+
 
 
