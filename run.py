@@ -25,6 +25,16 @@ user_score = 0
 computer_score = 0
 
 
+# Python program to print
+# colored text and background
+# Code taken from https://www.geeksforgeeks.org/print-colors-python-terminal/
+def prRed(skk): print("\033[91m {}\033[00m" .format(skk))
+def prGreen(skk): print("\033[92m {}\033[00m" .format(skk))
+def prYellow(skk): print("\033[93m {}\033[00m" .format(skk))
+def prPurple(skk): print("\033[95m {}\033[00m" .format(skk))
+def prCyan(skk): print("\033[96m {}\033[00m" .format(skk))
+
+
 def print_board(board):
     """
     Creates a board with letters for the columns and numbers for the rows
