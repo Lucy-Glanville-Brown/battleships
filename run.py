@@ -29,9 +29,17 @@ computer_score = 0
 # colored text and background
 # Code taken from https://www.geeksforgeeks.org/print-colors-python-terminal/
 def prRed(skk): print("\033[91m {}\033[00m" .format(skk))
+
+
 def prGreen(skk): print("\033[92m {}\033[00m" .format(skk))
+
+
 def prYellow(skk): print("\033[93m {}\033[00m" .format(skk))
+
+
 def prPurple(skk): print("\033[95m {}\033[00m" .format(skk))
+
+
 def prCyan(skk): print("\033[96m {}\033[00m" .format(skk))
 
 
@@ -70,9 +78,9 @@ def computer_guess(board):
     When there is an available space update with "@"
     """
     global computer_score
-    
     computer_row, computer_column = randint(0, 7), randint(0, 7)
-    if USER_BOARD[computer_row][computer_column] == "-" or USER_BOARD[computer_row][computer_column] == "X":
+    if (USER_BOARD[computer_row][computer_column] == "-" or
+            USER_BOARD[computer_row][computer_column] == "X"):
         computer_row = randint(0, 7)
         computer_column = randint(0, 7)
     elif USER_BOARD[computer_row][computer_column] == "@":
@@ -88,7 +96,7 @@ def computer_guess(board):
             f"The computer guessed row {computer_row +1}"
             f" and column {numbers_to_letters[computer_column]}")
         USER_BOARD[computer_row][computer_column] = "-"
-            
+
 
 def get_ship_location():
     """
@@ -142,7 +150,6 @@ def validate_column(values):
     return True
 
 
-
 def count_hit_ships(board):
     """
     Counts how many ships you have hit
@@ -162,15 +169,14 @@ def main():
     print_board(HIDDEN_BOARD)
     create_ships(USER_BOARD)
     prGreen("""\
-
-______       _   _   _           _     _           
-| ___ \     | | | | | |         | |   (_)          
-| |_/ / __ _| |_| |_| | ___  ___| |__  _ _ __  ___ 
+______       _   _   _           _     _
+| ___ \     | | | | | |         | |   (_)
+| |_/ / __ _| |_| |_| | ___  ___| |__  _ _ __  ___
 | ___ \/ _` | __| __| |/ _ \/ __| '_ \| | '_ \/ __|
-| |_/ / (_| | |_| |_| |  __/\__ \ | | | | |_) \__ \ 
+| |_/ / (_| | |_| |_| |  __/\__ \ | | | | |_) \__ \.
 \____/ \__,_|\__|\__|_|\___||___/_| |_|_| .__/|___/
-                                        | |        
-                                        |_|        
+                                        | |
+                                        |_|
         """)
     prCyan("""\
                                   )___(
@@ -187,7 +193,6 @@ ______       _   _   _           _     _
     global username
     username = input("Please enter your name:\n")
 
-main()
 
 def run_game():
     """
@@ -223,9 +228,11 @@ def run_game():
             print("The game is now over")
             break
         prPurple("You have " + str(turns) + " turns remaining")
-        prYellow(f"{username}'s Score: {user_score} Computer's Score: {computer_score}")
+        prYellow(f"{username}'s Score: {user_score}"
+                 f" Computer's Score: {computer_score}")
         if turns == 0:
-            prGreen(f"Sorry {username}, you ran out of turns, the game is over")
+            prGreen(
+                f"Sorry {username}, you ran out of turns, the game is over")
             break
         if count_hit_ships(USER_BOARD) == 5:
             prGreen(
@@ -235,13 +242,18 @@ def run_game():
         if count_hit_ships(GUESS_BOARD) < 5:
             continue_playing = input("Do you want to continue playing? y/n\n")
             if continue_playing == "y" or continue_playing == "yes":
-                print("You have decided to continue playing the game.")
+                print(
+                    "You have decided to continue playing the game.")
                 continue
             elif continue_playing == "n" or continue_playing == "no":
-                print("You have decided to finish playing, the game is now over")
+                print(
+                    "You have decided to finish playing, the game is now over")
                 break
             else:
                 print("Sorry, please can you enter y/n")
-                continue_playing = input("Do you want to continue playing? y/n \n")
+                continue_playing = input(
+                    "Do you want to continue playing? y/n \n")
 
+
+main()
 run_game()
