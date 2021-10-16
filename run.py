@@ -223,7 +223,15 @@ def run_game():
             print("The game is now over")
             break
         prPurple("You have " + str(turns) + " turns remaining")
-        prYellow(f"{username}'s Score: {user_score} Computer Score: {computer_score}")
+        prYellow(f"{username}'s Score: {user_score} Computer's Score: {computer_score}")
+        if turns == 0:
+            prGreen(f"Sorry {username}, you ran out of turns, the game is over")
+            break
+        if count_hit_ships(USER_BOARD) == 5:
+            prGreen(
+                f"Sorry {username}, the computer"
+                " has sunk all of your battleships")
+            break
         if count_hit_ships(GUESS_BOARD) < 5:
             continue_playing = input("Do you want to continue playing? y/n\n")
             if continue_playing == "y" or continue_playing == "yes":
@@ -235,13 +243,5 @@ def run_game():
             else:
                 print("Sorry, please can you enter y/n")
                 continue_playing = input("Do you want to continue playing? y/n \n")
-        if turns == 0:
-            prGreen(f"Sorry {username}, you ran out of turns, the game is over")
-            break
-        if count_hit_ships(USER_BOARD) == 5:
-            prGreen(
-                f"Sorry {username}, the computer"
-                " has sunk all of your battleships")
-            break
 
 run_game()
