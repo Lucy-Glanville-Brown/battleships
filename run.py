@@ -151,11 +151,31 @@ def main():
     # print hidden board for testing, needs removing before submission
     print_board(HIDDEN_BOARD)
     create_ships(USER_BOARD)
+    print("""\
+
+______       _   _   _           _     _           
+| ___ \     | | | | | |         | |   (_)          
+| |_/ / __ _| |_| |_| | ___  ___| |__  _ _ __  ___ 
+| ___ \/ _` | __| __| |/ _ \/ __| '_ \| | '_ \/ __|
+| |_/ / (_| | |_| |_| |  __/\__ \ | | | | |_) \__ \ 
+\____/ \__,_|\__|\__|_|\___||___/_| |_|_| .__/|___/
+                                        | |        
+                                        |_|        
+        """)
+    print("""\
+                                  )___(
+                           _______/__/_
+                  ___     /===========|   ___
+ ____       __   [\\\]___/____________|__[///]   __
+ \   \_____[\\]__/___________________________\__[//]___
+  \40A                                                 |
+   \                                                  /
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        """)
     print("Welcome to Battleships")
     print("You have 10 turns to find all of the battleships")
     global username
     username = input("Please enter your name:\n")
-
 
 main()
 
@@ -194,7 +214,7 @@ def run_game():
             break
         print("You have " + str(turns) + " turns remaining")
         print(f"{username}'s Score: {user_score} Computer Score: {computer_score}")
-        continue_playing = input("Do you wan to continue playing? y/n\n")
+        continue_playing = input("Do you want to continue playing? y/n\n")
         if continue_playing == "y" or continue_playing == "yes":
             print("You have decided to continue playing the game.")
             continue
@@ -202,7 +222,7 @@ def run_game():
             print("You have decided to finish playing, the game is now over")
             break
         else:
-            print("Sorry please can you enter y/n")
+            print("Sorry, please can you enter y/n")
             continue_playing = input("Do you want to continue playing? y/n \n")
         if turns == 0:
             print(f"Sorry {username}, you ran out of turns, the game is over")
