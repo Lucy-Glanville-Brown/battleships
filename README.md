@@ -88,17 +88,27 @@ When the game is loaded the game name, welcome message, game instructions and us
 * Display game info
 * User inputs name
 
+![loading screen](https://user-images.githubusercontent.com/85178695/137600517-3cb4a091-9244-4288-bf94-72c3800a2bef.png)
+
 When the user inputs their name two boards are created, one for the user and their ships and another board for the computer which is blank for the user to guess the computers ships.
 * User board displayed with ship locations for the computer to guess
 * Computer board displayed for the user to guess the computers ship locations
+
+![game boards](https://user-images.githubusercontent.com/85178695/137600529-586d627d-6075-4b34-9905-8a19f32defe6.png)
 
 When the user inputs a row number this is validated to see if it is a number between 1-8. I have tested the validation by using a number outside of the range, a letter and a word and the data validation error message displays until the correct input type has been entered.
 * User inputs guess for row
 * User input validated for correct input
 
+![row validation](https://user-images.githubusercontent.com/85178695/137600543-b87292f3-a6a6-4a6c-bc7f-87c6146090f9.png)
+
+
 When the user inputs a column letter this is validated to see if it is a letter between A-H. I have tested the validation by using a letter outside of the range, a word, and a number and the data validation error message displays until the correct input type has been entered.
 * User inputs guess for column
 * User input validated for correct input
+
+![column validation](https://user-images.githubusercontent.com/85178695/137600547-91f476d5-3c10-471e-87b2-7b8e994666ce.png)
+
 
 Once the user has input the row and column coordinates, these are checked against the HIDDEN_BOARD to see if the user has hit or missed. A message is printed to the user with the hit or miss result. The computers guess is randomly generated and checked against the users board and a message to the user is displayed with the hit or miss result. A message with the computers guess coordinates are printed to the user. The turns remaining is display as well as the user's and computer's scores. Message is displayed to the user asking if they want to continue playing.
 * User’s input coordinates are checked against the hidden board
@@ -110,20 +120,39 @@ Once the user has input the row and column coordinates, these are checked agains
 * Turns remaining calculated and printed to the terminal
 * Continue playing option for the user to input y/n
 
+![end of round](https://user-images.githubusercontent.com/85178695/137600572-43b7c608-5873-44ec-9982-7387655dba42.png)
+
+
 If the user inputs n a message is displayed and the game ends
+
+![continue playing n](https://user-images.githubusercontent.com/85178695/137600586-248f40a6-0a6b-443f-a422-4801fbed9e5e.png)
 
 If the users inputs y a message is display and the game continues
 
+![continue playing y](https://user-images.githubusercontent.com/85178695/137600591-14a7bbde-da73-44bc-9131-24bab936e16f.png)
+
+
 When the user hits a ship the correct message is displayed and their score is incremented by 1.
 
+![computer ship been hit](https://user-images.githubusercontent.com/85178695/137600653-3d1313a8-949e-4bb9-bb05-a920c405de09.png)
+
+
 When the computer hits a ship the correct message is displayed and their score is incremented by 1.
+
+![user ship been hit](https://user-images.githubusercontent.com/85178695/137600661-2d48ca27-713f-48a7-9668-16053c994ee7.png)
+
 
 The users board and computer board are updated with the guesses and reprinted. The game continues until the user either quits, hits all 5 ships, the computer hits all 5 ships of the user has run out of turns.
 * Users board updated with hit or miss and re-printed
 * Computers board updated with hit or miss and re-printed
 
+![boards updated and reprinted](https://user-images.githubusercontent.com/85178695/137600701-634f9fee-f933-42a0-9022-9bcdad9c72f6.png)
+
+
 When the user hits all 5 ships a message is display and the game finishes.
 * If user has hit 5 ships display message for winning game and end game
+
+![user hit 5 ships](https://user-images.githubusercontent.com/85178695/137600704-afdeb5a8-fb5a-44df-8dc9-dfa84c66357e.png)
 
 
 * If computer has hit 5 ships display message for losing game and end game
@@ -131,11 +160,17 @@ When the user hits all 5 ships a message is display and the game finishes.
 
 * If user has run out of turns display message and end game
 
+![run out of turns](https://user-images.githubusercontent.com/85178695/137600717-cc0bd793-8a21-4dc2-87e7-34c8b035a52b.png)
+
+
 ### Bugs
 The computer guesses were not being updated on the user's board but I had noticed that I was not calling the correct variable names. This has now been corrected and the boards are being updated as expected.
 
 ### Validator Testing
 PEP8
+
+![PEP8 Validator](https://user-images.githubusercontent.com/85178695/137600734-85b09ca6-42d9-41c9-b2a6-5976a06d6b98.png)
+
 
 ## Deployment
 This project was deployed using Code Institute's mock terminal for Heroku.
