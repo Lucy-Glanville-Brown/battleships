@@ -214,16 +214,17 @@ def run_game():
             break
         print("You have " + str(turns) + " turns remaining")
         print(f"{username}'s Score: {user_score} Computer Score: {computer_score}")
-        continue_playing = input("Do you want to continue playing? y/n\n")
-        if continue_playing == "y" or continue_playing == "yes":
-            print("You have decided to continue playing the game.")
-            continue
-        elif continue_playing == "n" or continue_playing == "no":
-            print("You have decided to finish playing, the game is now over")
-            break
-        else:
-            print("Sorry, please can you enter y/n")
-            continue_playing = input("Do you want to continue playing? y/n \n")
+        if count_hit_ships(GUESS_BOARD) < 5:
+            continue_playing = input("Do you want to continue playing? y/n\n")
+            if continue_playing == "y" or continue_playing == "yes":
+                print("You have decided to continue playing the game.")
+                continue
+            elif continue_playing == "n" or continue_playing == "no":
+                print("You have decided to finish playing, the game is now over")
+                break
+            else:
+                print("Sorry, please can you enter y/n")
+                continue_playing = input("Do you want to continue playing? y/n \n")
         if turns == 0:
             print(f"Sorry {username}, you ran out of turns, the game is over")
             break
