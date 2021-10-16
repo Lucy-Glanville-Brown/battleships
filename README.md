@@ -101,6 +101,9 @@ This project was deployed using Code Institute's mock terminal for Heroku.
 ## Credits
 * Code Institute for the deployment terminal
 * Knowledge Mavens for the YouTube video How to Code Battleship in Python - Single Player Game. https://www.youtube.com/watch?v=tF1WRCrd_HQ
+* The battleships text in ascii was created using an ascii generator https://patorjk.com/software/taag/#p=display&f=Doom&t=Battleships
+* The battleship image in ascii was taken from https://www.asciiart.eu/vehicles/navy
+
 
 
 
