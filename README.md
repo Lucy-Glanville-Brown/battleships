@@ -22,10 +22,11 @@ Create a Python terminal based game where the users challenges the computer.
 * Computers guesses are randomly generated
 * Computers guesses are checked against the user board
 * Message to user to display if the computer guess was a hit or miss
-* Users board updated with hit or miss and re-printed
-* Computers board updated with hit or miss and re-printed
 * User and computer scores calculated and printed to terminal
 * Turns remaining calculated and printed to the terminal
+* Continue playing option for the user to input y/n
+* Users board updated with hit or miss and re-printed
+* Computers board updated with hit or miss and re-printed
 * If user has hit 5 ships display message for winning game and end game
 * If computer has hit 5 ships display message for losing game and end game
 * If user has run out of turns display message and end game
@@ -81,6 +82,54 @@ After each turn, the number of turns remaining is displayed and control returns 
 I have manually tested this project by doing the following:
 * Run the code through the PEP8 validator and confirmed there are no problems
 * Tested in the terminal on Gitpod and the Code Institute Heroku Terminal
+
+When the game is loaded the game name, welcome message, game instructions and user's name input field are displayed correctly.
+* Display game name
+* Display game info
+* User inputs name
+
+When the user inputs their name two boards are created, one for the user and their ships and another board for the computer which is blank for the user to guess the computers ships.
+* User board displayed with ship locations for the computer to guess
+* Computer board displayed for the user to guess the computers ship locations
+
+When the user inputs a row number this is validated to see if it is a number between 1-8. I have tested the validation by using a number outside of the range, a letter and a word and the data validation error message displays until the correct input type has been entered.
+* User inputs guess for row
+* User input validated for correct input
+
+When the user inputs a column letter this is validated to see if it is a letter between A-H. I have tested the validation by using a letter outside of the range, a word, and a number and the data validation error message displays until the correct input type has been entered.
+* User inputs guess for column
+* User input validated for correct input
+
+Once the user has input the row and column coordinates, these are checked against the HIDDEN_BOARD to see if the user has hit or missed. A message is printed to the user with the hit or miss result. The computers guess is randomly generated and checked against the users board and a message to the user is displayed with the hit or miss result. A message with the computers guess coordinates are printed to the user. The turns remaining is display as well as the user's and computer's scores. Message is displayed to the user asking if they want to continue playing.
+* User’s input coordinates are checked against the hidden board
+* Message to user to display if their guess was a hit or a miss
+* Computers guesses are randomly generated
+* Computers guesses are checked against the user board
+* Message to user to display if the computer guess was a hit or miss
+* User and computer scores calculated and printed to terminal
+* Turns remaining calculated and printed to the terminal
+* Continue playing option for the user to input y/n
+
+If the user inputs n a message is displayed and the game ends
+
+If the users inputs y a message is display and the game continues
+
+When the user hits a ship the correct message is displayed and their score is incremented by 1.
+
+When the computer hits a ship the correct message is displayed and their score is incremented by 1.
+
+The users board and computer board are updated with the guesses and reprinted. The game continues until the user either quits, hits all 5 ships, the computer hits all 5 ships of the user has run out of turns.
+* Users board updated with hit or miss and re-printed
+* Computers board updated with hit or miss and re-printed
+
+When the user hits all 5 ships a message is display and the game finishes.
+* If user has hit 5 ships display message for winning game and end game
+
+
+* If computer has hit 5 ships display message for losing game and end game
+
+
+* If user has run out of turns display message and end game
 
 ### Bugs
 The computer guesses were not being updated on the user's board but I had noticed that I was not calling the correct variable names. This has now been corrected and the boards are being updated as expected.
