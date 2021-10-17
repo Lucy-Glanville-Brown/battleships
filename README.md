@@ -3,6 +3,8 @@
 Battleships is a game which I think most people would have played at some point in their lives. This Battleships game is a Python terminal game, which runs in the Code Institute mock terminal on Heroku.
 The users have 10 turns to find all of the computer’s battleships before the computer finds theirs. Each battleship occupies one space on the board.
 
+View the live project [here](https://battleships01.herokuapp.com/)
+
 ### How to play
 In this version the player enters their name and two boards are randomly generated. The first board displayed is the user’s board which shows the locations of the ships which the computer needs to find. The second board is the computer’s board which is where the user’s guesses will be updated, this will not show the ship locations until the user has hit one of the ships. If a guess misses the battleship “-“ will be display, when a battleship has been hit “X” will be displayed. The player and the computer then take turns to make guesses to try and sink each others battleships. The winner is the player who can sink all of the battlehips first before they run out of turns.
 
@@ -166,6 +168,8 @@ When the user hits all 5 ships a message is display and the game finishes.
 ### Bugs
 The computer guesses were not being updated on the user's board but I had noticed that I was not calling the correct variable names. This has now been corrected and the boards are being updated as expected.
 
+When testing the game I have noticed that sometimes the computer guess is not generated and the messages are not printed to the screen. I have tested this several times and I have not been able to find any logic in why this is happening as it seems to be at random times.  
+
 ### Validator Testing
 PEP8
 
@@ -184,9 +188,44 @@ This project was deployed using Code Institute's mock terminal for Heroku.
 
 ## Credits
 * Code Institute for the deployment terminal
-* Knowledge Mavens for the YouTube video How to Code Battleship in Python - Single Player Game. https://www.youtube.com/watch?v=tF1WRCrd_HQ
-* The battleships text in ascii was created using an ascii generator https://patorjk.com/software/taag/#p=display&f=Doom&t=Battleships
-* The battleship image in ascii was taken from https://www.asciiart.eu/vehicles/navy
+* Knowledge Mavens for the YouTube video How to Code Battleship in Python - Single Player Game. [Knowledge Mavens Video](https://www.youtube.com/watch?v=tF1WRCrd_HQ)
+* The battleships text in ascii was created using an ascii generator found [here](https://patorjk.com/software/taag/#p=display&f=Doom&t=Battleships)
+* The battleship image in ascii was taken from [here](https://www.asciiart.eu/vehicles/navy)
+* After running the code through the PEP8 validator I had a lot of errors for the lines being too long which I found help on stack overflow [here](https://stackoverflow.com/questions/3346230/wrap-long-lines-in-python/18160132)
+* PEP8 validator error local-variable-referenced-before-assignment I also found help on stack overflow [here](https://stackoverflow.com/questions/10851906/python-3-unboundlocalerror-local-variable-referenced-before-assignment)
+* Another error I had after using PEP8 was that my if statement line was too long, I found help on stackoverflow and flake8rules
+[stackoverflow](https://stackoverflow.com/questions/5253348/very-long-if-statement-in-python)
+[flake8rules](https://www.flake8rules.com/rules/E129.html)
+
+
+## Acknowledgements
+The basic layout of the code was written by following along with the Knowledge Mavens YouTube video on How to Code Battleship in Python - Single Player. I used Repl to code along with the video and the original code can be found [here.](https://replit.com/@lucygbrown/battleships#main.py)
+
+I watched this video several times and made notes as I was going along to break down each step. This video was just for single player so I have created another board which shows the users board with ships for the computer to guess. I have also added data validation for the input of the row and column coordinates as well as a contiune playing option. 
+
+The code that I have added is:
+* USER_BOARD
+* numbers_to_letters
+* user_score
+* computer_score
+* computer_guess(board)
+* validate_row(values)
+* validate_column(values)
+* main()
+    * Battleships ascii text
+    * Battleship ascii art
+    * username input
+* run_game()
+    * Updated the printed messages to f strings to include the user's name
+    * Print the USERS_BOARD
+    * Added computer_guess(USERS_BOARD) to the if statments for if the ship location was a hit or miss
+    * Added continue playing option and if statments
+
+
+
+My mentor Nishant Kumar suggested adding colour to the game which was found on Geeks for Geeks website [here.](https://www.geeksforgeeks.org/print-colors-python-terminal/)
+
+
 
 
 
