@@ -27,7 +27,7 @@ computer_score = 0
 
 # Python program to print
 # colored text and background
-# Code taken from https://www.geeksforgeeks.org/print-colors-python-terminal/
+# Code taken from Geeks for Geeks, see README
 def prRed(skk): print("\033[91m {}\033[00m" .format(skk))
 
 
@@ -44,6 +44,7 @@ def prCyan(skk): print("\033[96m {}\033[00m" .format(skk))
 
 
 def print_board(board):
+    # Code taken from Knowledge Mavens video, see README
     """
     Creates a board with letters for the columns and numbers for the rows
     """
@@ -56,6 +57,7 @@ def print_board(board):
 
 
 def create_ships(board):
+    # Code taken from Knowledge Mavens video, see README
     """
     Creates a random integer between 0 and 7 for ship_row and ship_column
     Checks if "@" is already on the board, if so runs randomint until
@@ -71,11 +73,15 @@ def create_ships(board):
 
 def computer_guess(board):
     """
-    Creates a random integer between 0 and 7 for computer_ship_row and
-    computer_ship_column
-    Checks if "@" is already on the board, if so runs randomint until
+    Creates a random integer between 0 and 7 for computer_row and
+    computer_column
+    Checks if "-" or "X" is already on the board, if so runs randomint until
     there is an available space
-    When there is an available space update with "@"
+    If computer_row and computer_column is "@", prints message to user to say 
+    their ship has been hit and updates board with "X"
+    Else the computer_row and computer_column finds a blank space, prints
+    message to the user to say the computer has missed and updates the
+    board with "-"
     """
     global computer_score
     computer_row, computer_column = randint(0, 7), randint(0, 7)
@@ -99,6 +105,7 @@ def computer_guess(board):
 
 
 def get_ship_location():
+    # Code taken from Knowledge Mavens video, see README
     """
     Asks user to input the guesses for ship row and ship column locations
     Checks input data for row is in range "12345678"
@@ -121,6 +128,7 @@ def get_ship_location():
 
 def validate_row(values):
     """
+    If values entered not an interger between 1-8 error message printed
     """
     try:
         [int(value) for value in values]
@@ -137,6 +145,7 @@ def validate_row(values):
 
 def validate_column(values):
     """
+    If values entered not in letters_to_numbers error message printed
     """
     try:
         if values not in letters_to_numbers:
@@ -151,8 +160,9 @@ def validate_column(values):
 
 
 def count_hit_ships(board):
+    # Code taken from Knowledge Mavens video, see README
     """
-    Counts how many ships you have hit
+    Counts how many ships on the board have been hit "X"
     """
     count = 0
     for row in board:
@@ -163,6 +173,9 @@ def count_hit_ships(board):
 
 
 def main():
+    """
+    Run all start up functions
+    """
     create_ships(HIDDEN_BOARD)
     print("Hidden Board")
     # print hidden board for testing, needs removing before submission
@@ -198,6 +211,11 @@ def run_game():
     """
     Runs the game with 10 turns
     When turns = 0 game is over
+    """
+    # Code taken from Knowledge Mavens video, see README
+    """
+    I have added the user and computer scores, the if statement
+    for if the computer wins, and the continue playing option
     """
     turns = 10
     global user_score
