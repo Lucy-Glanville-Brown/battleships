@@ -147,7 +147,7 @@ When the computer hits a ship the correct message is displayed and their score i
 ![user ship been hit](https://user-images.githubusercontent.com/85178695/137600661-2d48ca27-713f-48a7-9668-16053c994ee7.png)
 
 
-The users board and computer board are updated with the guesses and reprinted. The game continues until the user either quits, hits all 5 ships, the computer hits all 5 ships of the user has run out of turns.
+The users board and computer board are updated with the guesses and reprinted. The game continues until the user either quits, the user hits all 5 ships, the computer hits all 5 ships or the user has run out of turns.
 * Users board updated with hit or miss and re-printed
 * Computers board updated with hit or miss and re-printed
 
@@ -172,6 +172,8 @@ In the github terminal I changed turns from 10 to 80 in the run_game function to
 ### Bugs
 The computer guesses were not being updated on the user's board but I had noticed that I was not calling the correct variable names. This has now been corrected and the boards are being updated as expected.
 
+
+When the user had ran out of turns the continue playing option was being shown instead of the game ending. This was due to the continue playing if statement appearing first in the while loop and has now been fixed.
 ![bug run out turns](https://user-images.githubusercontent.com/85178695/137642822-cbe2007e-4154-470f-8e53-52c62dd93559.png)
 
 
