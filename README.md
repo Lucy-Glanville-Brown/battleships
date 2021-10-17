@@ -177,7 +177,8 @@ When the user had ran out of turns the continue playing option was being shown i
 ![bug run out turns](https://user-images.githubusercontent.com/85178695/137642822-cbe2007e-4154-470f-8e53-52c62dd93559.png)
 
 
-When testing the game I have noticed that sometimes the computer guess is not generated and the messages are not printed to the screen. I have tested this several times and I have not been able to find any logic in why this is happening as it seems to be at random times.  
+When testing the game I have noticed that sometimes the computer guess is not generated and the messages are not printed to the screen. I have tested this several times and I have not been able to find any logic in why this is happening as it seems to be at random times. I have documented the testing I have completed so far in this [file]([testing_computer_guess_not_generated.txt](https://github.com/Lucy-Glanville-Brown/battleships/files/7360924/testing_computer_guess_not_generated.txt)
+) 
 
 ![copmputer guess not generated](https://user-images.githubusercontent.com/85178695/137642829-9ce6ed20-8a12-4e4d-b3eb-90f12b1c5fff.png)
 
