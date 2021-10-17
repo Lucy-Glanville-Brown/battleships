@@ -3,6 +3,9 @@
 Battleships is a game which I think most people would have played at some point in their lives. This Battleships game is a Python terminal game, which runs in the Code Institute mock terminal on Heroku.
 The users have 10 turns to find all of the computer’s battleships before the computer finds theirs. Each battleship occupies one space on the board.
 
+![Am i responsive](https://user-images.githubusercontent.com/85178695/137642707-6797f684-de8c-4ff0-9e3a-a6bb3ec29c3b.png)
+
+
 View the live project [here](https://battleships01.herokuapp.com/)
 
 ### How to play
@@ -157,6 +160,7 @@ When the user hits all 5 ships a message is display and the game finishes.
 ![user hit 5 ships](https://user-images.githubusercontent.com/85178695/137600704-afdeb5a8-fb5a-44df-8dc9-dfa84c66357e.png)
 
 
+In the github terminal I changed turns from 10 to 80 in the run_game function to test if the computer could win the game when not restricted to 10 turns. I was unable to test this successfully as there is a bug which has been documented in the bugs section.
 * If computer has hit 5 ships display message for losing game and end game
 
 
@@ -168,7 +172,13 @@ When the user hits all 5 ships a message is display and the game finishes.
 ### Bugs
 The computer guesses were not being updated on the user's board but I had noticed that I was not calling the correct variable names. This has now been corrected and the boards are being updated as expected.
 
+![bug run out turns](https://user-images.githubusercontent.com/85178695/137642822-cbe2007e-4154-470f-8e53-52c62dd93559.png)
+
+
 When testing the game I have noticed that sometimes the computer guess is not generated and the messages are not printed to the screen. I have tested this several times and I have not been able to find any logic in why this is happening as it seems to be at random times.  
+
+![copmputer guess not generated](https://user-images.githubusercontent.com/85178695/137642829-9ce6ed20-8a12-4e4d-b3eb-90f12b1c5fff.png)
+
 
 ### Validator Testing
 PEP8
