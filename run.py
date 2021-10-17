@@ -177,9 +177,9 @@ def main():
     Run all start up functions
     """
     create_ships(HIDDEN_BOARD)
-    print("Hidden Board")
     # print hidden board for testing, needs removing before submission
-    print_board(HIDDEN_BOARD)
+    #print("Hidden Board")
+    #print_board(HIDDEN_BOARD)
     create_ships(USER_BOARD)
     prGreen("""\
 ______       _   _   _           _     _
