@@ -77,7 +77,7 @@ def computer_guess(board):
     computer_column
     Checks if "-" or "X" is already on the board, if so runs randomint until
     there is an available space
-    If computer_row and computer_column is "@", prints message to user to say 
+    If computer_row and computer_column is "@", prints message to user to say
     their ship has been hit and updates board with "X"
     Else the computer_row and computer_column finds a blank space, prints
     message to the user to say the computer has missed and updates the
@@ -178,8 +178,8 @@ def main():
     """
     create_ships(HIDDEN_BOARD)
     # print hidden board for testing, needs removing before submission
-    #print("Hidden Board")
-    #print_board(HIDDEN_BOARD)
+    # print("Hidden Board")
+    # print_board(HIDDEN_BOARD)
     create_ships(USER_BOARD)
     prGreen("""\
 ______       _   _   _           _     _

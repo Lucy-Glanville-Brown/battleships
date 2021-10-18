@@ -9,10 +9,10 @@ The users have 10 turns to find all of the computer’s battleships before the c
 View the live project [here](https://battleships01.herokuapp.com/)
 
 ### How to play
-In this version the player enters their name and two boards are randomly generated. The first board displayed is the user’s board which shows the locations of the ships which the computer needs to find. The second board is the computer’s board which is where the user’s guesses will be updated, this will not show the ship locations until the user has hit one of the ships. If a guess misses the battleship “-“ will be display, when a battleship has been hit “X” will be displayed. The player and the computer then take turns to make guesses to try and sink each others battleships. The winner is the player who can sink all of the battlehips first before they run out of turns.
+In this version the player enters their name and two boards are randomly generated. The first board displayed is the player’s board which shows the locations of the ships which the computer needs to find. The second board is the computer’s board which is where the players’s guesses will be updated, this will not show the ship locations until the player has hit one of the ships. If a guess misses the battleship “-“ will be display, when a battleship has been hit “X” will be displayed. The player and the computer then take turns to make guesses to try and sink each other's battleships. The winner is the player who can sink all of the battleships first before they run out of turns.
 
 ## User Stories
-Create a Python terminal based game where the users challenges the computer.
+Create a Python terminal based game where the user challenges the computer.
 * Display game name
 * Display game info
 * User inputs name
@@ -55,7 +55,7 @@ In this game of Battleships, the player and computer each have up to 10 turns to
 
 There are three boards, the Player's Board and the Computer's Board which are both displayed, and a hidden board which holds the position of the computer's battleships which the player needs to find.
 
-Each  board has 8 rows and 8 columns, the rows are 1 to 8, and the columns are A to H, and each cell contains a spaces.
+Each  board has 8 rows and 8 columns, the rows are 1 to 8, and the columns are A to H, and each cell contains a space.
 
 
 Each battleship occupies one cell, and before the game starts, the computer generates the position of 5 battleships that the player and computer need to find to win, and populates the player and hidden boards with them by replacing the space with a "@". The computer board is left blank so that the player cannot see the computers choices.
@@ -115,7 +115,7 @@ When the user inputs a column letter this is validated to see if it is a letter 
 ![column validation](https://user-images.githubusercontent.com/85178695/137600547-91f476d5-3c10-471e-87b2-7b8e994666ce.png)
 
 
-Once the user has input the row and column coordinates, these are checked against the HIDDEN_BOARD to see if the user has hit or missed. A message is printed to the user with the hit or miss result. The computers guess is randomly generated and checked against the users board and a message to the user is displayed with the hit or miss result. A message with the computers guess coordinates are printed to the user. The turns remaining is display as well as the user's and computer's scores. Message is displayed to the user asking if they want to continue playing.
+Once the user has input the row and column coordinates, these are checked against the HIDDEN_BOARD to see if the user has hit or missed. A message is printed to the user with the hit or miss result. The computers guess is randomly generated and checked against the user's board and a message to the user is displayed with the hit or miss result. A message with the computers guess coordinates are printed to the user. The turns remaining is display as well as the user's and computer's scores. Message is displayed to the user asking if they want to continue playing.
 * User’s input coordinates are checked against the hidden board
 * Message to user to display if their guess was a hit or a miss
 * Computers guesses are randomly generated
@@ -132,7 +132,7 @@ If the user inputs n a message is displayed and the game ends
 
 ![continue playing n](https://user-images.githubusercontent.com/85178695/137600586-248f40a6-0a6b-443f-a422-4801fbed9e5e.png)
 
-If the users inputs y a message is display and the game continues
+If the user inputs y a message is display and the game continues
 
 ![continue playing y](https://user-images.githubusercontent.com/85178695/137600591-14a7bbde-da73-44bc-9131-24bab936e16f.png)
 
@@ -174,11 +174,14 @@ The computer guesses were not being updated on the user's board but I had notice
 
 
 When the user had ran out of turns the continue playing option was being shown instead of the game ending. This was due to the continue playing if statement appearing first in the while loop and has now been fixed.
+
 ![bug run out turns](https://user-images.githubusercontent.com/85178695/137642822-cbe2007e-4154-470f-8e53-52c62dd93559.png)
 
 
-When testing the game I have noticed that sometimes the computer guess is not generated and the messages are not printed to the screen. I have tested this several times and I have not been able to find any logic in why this is happening as it seems to be at random times. I have documented the testing I have completed so far in this [file]([testing_computer_guess_not_generated.txt](https://github.com/Lucy-Glanville-Brown/battleships/files/7360924/testing_computer_guess_not_generated.txt)
-) 
+When testing the game I have noticed that sometimes the computer guess is not generated and the messages are not printed to the screen. I have tested this several times and I have not been able to find any logic in why this is happening as it seems to be at random times. I have documented the testing I have completed so far in the file below.
+
+[testing_computer_guess_not_generated.txt](https://github.com/Lucy-Glanville-Brown/battleships/files/7360924/testing_computer_guess_not_generated.txt)
+
 
 ![copmputer guess not generated](https://user-images.githubusercontent.com/85178695/137642829-9ce6ed20-8a12-4e4d-b3eb-90f12b1c5fff.png)
 
@@ -214,7 +217,7 @@ This project was deployed using Code Institute's mock terminal for Heroku.
 ## Acknowledgements
 The basic layout of the code was written by following along with the Knowledge Mavens YouTube video on How to Code Battleship in Python - Single Player. I used Repl to code along with the video and the original code can be found [here.](https://replit.com/@lucygbrown/battleships#main.py)
 
-I watched this video several times and made notes as I was going along to break down each step. This video was just for single player so I have created another board which shows the users board with ships for the computer to guess. I have also added data validation for the input of the row and column coordinates as well as a contiune playing option. 
+I watched this video several times and made notes as I was going along to break down each step. This video was just for a single player so I have created another board which shows the users board with ships for the computer to guess, which makes this a two player game. I have also added data validation for the input of the row and column coordinates as well as a continue playing option. 
 
 The code that I have added is:
 * USER_BOARD
@@ -231,8 +234,8 @@ The code that I have added is:
 * run_game()
     * Updated the printed messages to f strings to include the user's name
     * Print the USERS_BOARD
-    * Added computer_guess(USERS_BOARD) to the if statments for if the ship location was a hit or miss
-    * Added continue playing option and if statments
+    * Added computer_guess(USERS_BOARD) to the if statements for if the ship location was a hit or miss
+    * Added continue playing option and if statements
 
 
 
