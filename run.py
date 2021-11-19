@@ -114,12 +114,12 @@ def get_ship_location():
     for column index number
     """
     row = input("Please enter a ship row 1-8\n")
-    while row not in "12345678":
+    while row not in "12345678" or len(row) > 1 or row == "":
         validate_row(row)
         print("Please enter a valid row")
         row = input("Please enter a ship row 1-8\n")
     column = input("Please enter a ship column A-H\n").upper()
-    while column not in "ABCDEFGH":
+    while column not in "ABCDEFGH" or len(column) > 1 or column == "":
         validate_column(column)
         print("Please enter a valid column")
         column = input("Please enter a ship column A-H\n").upper()
