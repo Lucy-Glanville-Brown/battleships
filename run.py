@@ -279,11 +279,11 @@ def run_game():
                 " has sunk all of your battleships")
             break
         if count_hit_ships(GUESS_BOARD) < 5:
-            continue_playing = input("Do you want to continue playing? y/n\n")
+            continue_playing = input("Do you want to continue playing? y/n\n").lower()
             while continue_playing not in continue_playing_options:
               validate_continue_playing(continue_playing)
               print("Please enter y/n")
-              continue_playing = input("Do you want to continue playing? y/n\n")
+              continue_playing = input("Do you want to continue playing? y/n\n").lower()
             if continue_playing == "y" or continue_playing == "yes":
                 print(
                     "You have decided to continue playing the game.")
