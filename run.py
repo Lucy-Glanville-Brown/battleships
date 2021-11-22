@@ -24,6 +24,8 @@ numbers_to_letters = {0: "A", 1: "B", 2: "C", 3: "D", 4: "E",
 user_score = 0
 computer_score = 0
 
+continue_playing_options = ["y", "yes", "n", "no"]
+
 
 # Python program to print
 # colored text and background
@@ -205,6 +207,22 @@ ______       _   _   _           _     _
     print("You have 10 turns to find all of the battleships")
     global username
     username = input("Please enter your name:\n")
+
+
+def validate_continue_playing(values):
+  """
+  If values entered not in continue_playing_options error message printed
+  """
+  try:
+      if values not in continue_playing_options:
+          raise ValueError(
+              f"y/n required, you provided '{values}'"
+              )
+  except ValueError as e:
+      print(f"Invalid data: {e}, please try again.\n")
+      return False
+
+  return True
 
 
 def run_game():
