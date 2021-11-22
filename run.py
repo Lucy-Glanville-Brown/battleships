@@ -207,6 +207,9 @@ ______       _   _   _           _     _
     print("You have 10 turns to find all of the battleships")
     global username
     username = input("Please enter your name:\n")
+    while username == "" or username == " ":
+      print("Please enter your name")
+      username = input("Please enter your name:\n")
 
 
 def validate_continue_playing(values):
