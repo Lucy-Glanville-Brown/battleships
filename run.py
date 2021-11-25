@@ -135,11 +135,11 @@ def validate_row(values):
     try:
         [int(value) for value in values]
         if int(values) < 1 or int(values) > 8:
-            raise ValueError(
-                f"Number between 1-8 required, you provided {values}"
+            print(
+                f"Number between 1-8 required, you provided '{values}'."
             )
-    except ValueError as e:
-        print(f"Invalid data: {e}, please try again.\n")
+    except:
+        print(f"Sorry number between 1-8 required, please try again.\n")
         return False
 
     return True
@@ -151,11 +151,11 @@ def validate_column(values):
     """
     try:
         if values not in letters_to_numbers:
-            raise ValueError(
-                f"Letter between A-H required, you provided {values}"
+            print(
+                f"Letter between A-H required, you provided '{values}'."
                 )
-    except ValueError as e:
-        print(f"Invalid data: {e}, please try again.\n")
+    except:
+        print(f"Sorry letter between A-H required, please try again.\n")
         return False
 
     return True
@@ -208,7 +208,7 @@ ______       _   _   _           _     _
     global username
     username = input("Please enter your name:\n")
     while username == "" or username == " ":
-      print("Please enter your name")
+      print("Sorry, please can you enter a name.")
       username = input("Please enter your name:\n")
 
 
@@ -218,11 +218,11 @@ def validate_continue_playing(values):
   """
   try:
       if values not in continue_playing_options:
-          raise ValueError(
-              f"y/n required, you provided '{values}'"
+          print(
+              f"Please enter y/n, you provided '{values}'."
               )
-  except ValueError as e:
-      print(f"Invalid data: {e}, please try again.\n")
+  except:
+      print(f"Sorry y/n required, please try again.\n")
       return False
 
   return True
@@ -282,7 +282,6 @@ def run_game():
             continue_playing = input("Do you want to continue playing? y/n\n").lower()
             while continue_playing not in continue_playing_options:
               validate_continue_playing(continue_playing)
-              print("Please enter y/n")
               continue_playing = input("Do you want to continue playing? y/n\n").lower()
             if continue_playing == "y" or continue_playing == "yes":
                 print(
