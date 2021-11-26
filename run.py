@@ -208,24 +208,24 @@ ______       _   _   _           _     _
     global username
     username = input("Please enter your name:\n")
     while username == "" or username == " ":
-      print("Sorry, please can you enter a name.")
-      username = input("Please enter your name:\n")
+        print("Sorry, please can you enter a name.")
+        username = input("Please enter your name:\n")
 
 
 def validate_continue_playing(values):
-  """
-  If values entered not in continue_playing_options error message printed
-  """
-  try:
-      if values not in continue_playing_options:
-          print(
-              f"Please enter y/n, you provided '{values}'."
-              )
-  except:
-      print(f"Sorry y/n required, please try again.\n")
-      return False
+    """
+    If values entered not in continue_playing_options error message printed
+    """
+    try:
+        if values not in continue_playing_options:
+            print(
+                f"Please enter y/n, you provided '{values}'."
+                )
+    except:
+        print(f"Sorry y/n required, please try again.\n")
+        return False
 
-  return True
+    return True
 
 
 def run_game():
@@ -279,10 +279,12 @@ def run_game():
                 " has sunk all of your battleships")
             break
         if count_hit_ships(GUESS_BOARD) < 5:
-            continue_playing = input("Do you want to continue playing? y/n\n").lower()
+            continue_playing = input(
+                    "Do you want to continue playing? y/n\n").lower()
             while continue_playing not in continue_playing_options:
-              validate_continue_playing(continue_playing)
-              continue_playing = input("Do you want to continue playing? y/n\n").lower()
+                validate_continue_playing(continue_playing)
+                continue_playing = input(
+                    "Do you want to continue playing? y/n\n").lower()
             if continue_playing == "y" or continue_playing == "yes":
                 print(
                     "You have decided to continue playing the game.")
