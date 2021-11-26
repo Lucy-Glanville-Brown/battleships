@@ -95,20 +95,24 @@ When the game is loaded the game name, welcome message, game instructions and us
 
 ![loading screen](https://user-images.githubusercontent.com/85178695/137600517-3cb4a091-9244-4288-bf94-72c3800a2bef.png)
 
+When the user inputs the username this is checked for empty data input and an error message will appear until a name has been entered.
+
+
+
 When the user inputs their name two boards are created, one for the user and their ships and another board for the computer which is blank for the user to guess the computers ships.
 * User board displayed with ship locations for the computer to guess
 * Computer board displayed for the user to guess the computers ship locations
 
 ![game boards](https://user-images.githubusercontent.com/85178695/137600529-586d627d-6075-4b34-9905-8a19f32defe6.png)
 
-When the user inputs a row number this is validated to see if it is a number between 1-8. I have tested the validation by using a number outside of the range, a letter and a word and the data validation error message displays until the correct input type has been entered.
+When the user inputs a row number this is validated to see if it is a number between 1-8. I have tested the validation by using a number outside of the range, a letter, a word, space and enter and the data validation error message displays until the correct input type has been entered.
 * User inputs guess for row
 * User input validated for correct input
 
 ![row validation](https://user-images.githubusercontent.com/85178695/137600543-b87292f3-a6a6-4a6c-bc7f-87c6146090f9.png)
 
 
-When the user inputs a column letter this is validated to see if it is a letter between A-H. I have tested the validation by using a letter outside of the range, a word, and a number and the data validation error message displays until the correct input type has been entered.
+When the user inputs a column letter this is validated to see if it is a letter between A-H. I have tested the validation by using a letter outside of the range, a word, a number, space and enter and the data validation error message displays until the correct input type has been entered.
 * User inputs guess for column
 * User input validated for correct input
 
@@ -128,11 +132,13 @@ Once the user has input the row and column coordinates, these are checked agains
 ![end of round](https://user-images.githubusercontent.com/85178695/137600572-43b7c608-5873-44ec-9982-7387655dba42.png)
 
 
-If the user inputs n a message is displayed and the game ends
+The user's input for the continue playing option is validated to see if it is "y", "yes", "n" or "no". I have tested the validation by entering a letter, a word, space and enter and the data validation error message displays until the correct input type has been entered.
+
+If the user inputs n or no a message is displayed and the game ends.
 
 ![continue playing n](https://user-images.githubusercontent.com/85178695/137600586-248f40a6-0a6b-443f-a422-4801fbed9e5e.png)
 
-If the user inputs y a message is display and the game continues
+If the user inputs y or yes a message is display and the game continues.
 
 ![continue playing y](https://user-images.githubusercontent.com/85178695/137600591-14a7bbde-da73-44bc-9131-24bab936e16f.png)
 
