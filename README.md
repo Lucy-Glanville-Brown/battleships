@@ -6,7 +6,7 @@ The users have 10 turns to find all of the computer’s battleships before the c
 ![Am i responsive](https://user-images.githubusercontent.com/85178695/137642707-6797f684-de8c-4ff0-9e3a-a6bb3ec29c3b.png)
 
 
-View the live project [here](https://battleships01.herokuapp.com/)
+View the live project [here](https://lucy-glanville-brown-battleships.onrender.com)
 
 ### How to play
 In this version the player enters their name and two boards are randomly generated. The first board displayed is the player’s board which shows the locations of the ships which the computer needs to find. The second board is the computer’s board which is where the players’s guesses will be updated, this will not show the ship locations until the player has hit one of the ships. If a guess misses the battleship “-“ will be display, when a battleship has been hit “X” will be displayed. The player and the computer then take turns to make guesses to try and sink each other's battleships. The winner is the player who can sink all of the battleships first before they run out of turns.
